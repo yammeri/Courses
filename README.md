@@ -29,4 +29,4 @@
 * Преподаватель может создавать новые курсы, удалять их и редактировать информацию об уже созданных
 * Преподаватель может удалять отзывы о своих курсах
 ## Диаграмма базы данных
-![Database model](https://sun9-79.userapi.com/impg/zKhnt2_i3ySh0loB7W20fUjOwR-Ie3qru1vtqQ/OXZqnSlEVJg.jpg?size=1246x748&quality=95&sign=3c18b3140fe003ad2ef64139c426b702&type=album)
+![Database model](https://sun1-94.userapi.com/impg/rmehUQdWE6QFHcMo7oy50h5fdhusS3f2yuonpw/CySBNll2zLo.jpg?size=1238x748&quality=95&sign=12b08979958409e39544426902175b59&type=album)
