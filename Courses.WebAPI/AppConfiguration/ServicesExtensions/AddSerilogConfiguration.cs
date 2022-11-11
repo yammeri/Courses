@@ -1,26 +1,24 @@
 using Serilog;
 
-namespace Courses.WebAPI.AppConfiguration.ServicesExtensions
+namespace Courses.WebAPI.AppConfiguration.ServicesExtensions;
+/// <summary>
+/// Services extensions
+/// </summary>
+public static partial class ServicesExtensions
 {
     /// <summary>
-    /// Services extensions
+    /// Add serilog configuration
     /// </summary>
-    public static partial class ServicesExtensions
+    /// <param name="builder"></param>
+    public static void AddSerilogConfiguration(this WebApplicationBuilder builder)
     {
-        /// <summary>
-        /// Add serilog configuration
-        /// </summary>
-        /// <param name="builder"></param>
-        public static void AddSerilogConfiguration(this WebApplicationBuilder builder)
+        builder.Host.UseSerilog((context, loggerConfiguration) =>
         {
-            builder.Host.UseSerilog((context, loggerConfiguration) =>
-            {
-                loggerConfiguration
+            loggerConfiguration
                 .Enrich.WithCorrelationId()
                 .ReadFrom.Configuration(context.Configuration);
-            });
+        });
 
-            builder.Services.AddHttpContextAccessor();
-        }
+        builder.Services.AddHttpContextAccessor();
     }
 }

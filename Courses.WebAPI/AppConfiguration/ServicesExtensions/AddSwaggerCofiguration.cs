@@ -1,44 +1,41 @@
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.OpenApi.Models;
 
-namespace Courses.WebAPI.AppConfiguration.ServicesExtensions
+namespace Courses.WebAPI.AppConfiguration.ServicesExtensions;
+/// <summary>
+/// Services extensions
+/// </summary>
+public static partial class ServicesExtensions
 {
+    private static string AppTitle = "Clinic Web API";
     /// <summary>
-    /// Services extensions
+    /// Add swagger settings
     /// </summary>
-    public static partial class ServicesExtensions
+    /// <param name="services"></param>
+    public static void AddSwaggerConfiguration(this IServiceCollection services)
     {
-        private static string AppTitle = "Clinic Web API";
-
-        /// <summary>
-        /// Add swagger settings
-        /// </summary>
-        /// <param name="services"></param>
-        public static void AddSwaggerConfiguration(this IServiceCollection services)
+        services.AddEndpointsApiExplorer();
+        services.AddSwaggerGen(options =>
         {
-            services.AddEndpointsApiExplorer();
-            services.AddSwaggerGen(options =>
+            // note: need a temporary service provider here because one has not been created yet
+            var provider = services.BuildServiceProvider().GetRequiredService<IApiVersionDescriptionProvider>();
+
+            // add a swagger document for each discovered API version
+            foreach (var description in provider.ApiVersionDescriptions)
             {
-                // note: need a temporary service provider here because one has not been created yet
-                var provider = services.BuildServiceProvider().GetRequiredService<IApiVersionDescriptionProvider>();
-
-                // add a swagger document for each discovered API version
-                foreach (var description in provider.ApiVersionDescriptions)
+                options.SwaggerDoc(description.GroupName, new OpenApiInfo
                 {
-                    options.SwaggerDoc(description.GroupName, new OpenApiInfo
-                    {
-                        Version = description.GroupName,
-                        Title = $"{AppTitle}",
-                    });
-                }
+                    Version = description.GroupName,
+                    Title = $"{AppTitle}",
+                });
+            }
 
-                options.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
+            options.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
 
-                //add xml file for api document
-                var xmlFile = $"api.xml";
-                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-                options.IncludeXmlComments(xmlPath);
-            });
-        }
+            //add xml file for api document
+            var xmlFile = $"api.xml";
+            var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+            options.IncludeXmlComments(xmlPath);
+        });
     }
 }

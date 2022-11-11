@@ -3,6 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Courses.WebAPI", "courses.webapi\Courses.WebAPI.csproj", "{E64AD1AD-6406-4C5A-9224-E4817C9EFF15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Courses.Entities", "courses.entities\Courses.Entities.csproj", "{4076D79B-9F5C-4E63-B7F1-71A86CB94BEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Courses.Repository", "courses.repository\Courses.Repository.csproj", "{74BA32CE-938A-4A1B-8768-C571E7764CF5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -10,5 +16,19 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E64AD1AD-6406-4C5A-9224-E4817C9EFF15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E64AD1AD-6406-4C5A-9224-E4817C9EFF15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E64AD1AD-6406-4C5A-9224-E4817C9EFF15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E64AD1AD-6406-4C5A-9224-E4817C9EFF15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4076D79B-9F5C-4E63-B7F1-71A86CB94BEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4076D79B-9F5C-4E63-B7F1-71A86CB94BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4076D79B-9F5C-4E63-B7F1-71A86CB94BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4076D79B-9F5C-4E63-B7F1-71A86CB94BEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74BA32CE-938A-4A1B-8768-C571E7764CF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74BA32CE-938A-4A1B-8768-C571E7764CF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74BA32CE-938A-4A1B-8768-C571E7764CF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74BA32CE-938A-4A1B-8768-C571E7764CF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

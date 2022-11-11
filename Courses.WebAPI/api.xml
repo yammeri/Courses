@@ -36,6 +36,16 @@
             <summary>
             Services extensions
             </summary>
+            <summary>
+            Services extensions
+            </summary>
+        </member>
+        <member name="M:Courses.WebAPI.AppConfiguration.ServicesExtensions.ServicesExtensions.AddDbContextConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Add DbContext configuration
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
         </member>
         <member name="M:Courses.WebAPI.AppConfiguration.ServicesExtensions.ServicesExtensions.AddSerilogConfiguration(Microsoft.AspNetCore.Builder.WebApplicationBuilder)">
             <summary>
