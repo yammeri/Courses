@@ -19,10 +19,10 @@ public static partial class ServicesExtensions
         {
             options
                 .UseLazyLoadingProxies()
-                .UseSqlServer(connectionString, sqlServerOption => 
-                    {
-                        sqlServerOption.CommandTimeout(60 * 60);
-                    });
+                .UseSqlServer(connectionString, sqlServerOptions => 
+                {
+                    sqlServerOptions.CommandTimeout(60 * 60); 
+                });
         });
     }
 }

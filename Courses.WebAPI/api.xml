@@ -65,5 +65,40 @@
             </summary>
             <param name="services"></param>
         </member>
+        <member name="T:Courses.WebAPI.Controllers.UsersController">
+            <summary>
+            Users endpoints
+            </summary>
+        </member>
+        <member name="M:Courses.WebAPI.Controllers.UsersController.#ctor(Courses.Repository.IRepository{Courses.Entities.Models.User})">
+            <summary>
+            Users controller
+            </summary>
+        </member>
+        <member name="M:Courses.WebAPI.Controllers.UsersController.GetUsers">
+            <summary>
+            Get users
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Courses.WebAPI.Controllers.UsersController.GetUser(System.Guid)">
+            <summary>
+            Get user by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Courses.WebAPI.Controllers.UsersController.SaveUser(Courses.Entities.Models.User)">
+            <summary>
+            Save user
+            </summary>
+            <param name="user"></param>
+        </member>
+        <member name="M:Courses.WebAPI.Controllers.UsersController.DeleteUser(Courses.Entities.Models.User)">
+            <summary>
+            Delete user
+            </summary>
+            <param name="user"></param>
+        </member>
     </members>
 </doc>

@@ -7,17 +7,15 @@ using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var configuration = new ConfigurationBuilder()
-    .AddJsonFile("appsettings.json", optional: false)
-    .Build();
-
-
 builder.AddSerilogConfiguration();
-builder.Services.AddDbContextConfiguration(configuration);
+builder.Services.AddDbContextConfiguration(new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json", optional: false)
+    .Build());
 builder.Services.AddVersioningConfiguration();
 builder.Services.AddControllers();
 builder.Services.AddSwaggerConfiguration();
 
+//temporary
 builder.Services.AddScoped<DbContext, Context>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 

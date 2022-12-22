@@ -73,7 +73,7 @@ public class Context : DbContext
 
         #region StydyingLectures
 
-        builder.Entity<StudyingLecture>().ToTable("");
+        builder.Entity<StudyingLecture>().ToTable("stydying_lectures");
         builder.Entity<StudyingLecture>().HasKey(x => x.LectureId);
         builder.Entity<StudyingLecture>().HasKey(x => x.StudentId);
         builder.Entity<StudyingLecture>().HasOne(x => x.Lecture)
@@ -89,7 +89,7 @@ public class Context : DbContext
 
         #region StudentCourses
 
-        builder.Entity<StudentCourse>().ToTable("");
+        builder.Entity<StudentCourse>().ToTable("student_courses");
         builder.Entity<StudentCourse>().HasKey(x => x.CourseId);
         builder.Entity<StudentCourse>().HasKey(x => x.StudentId);
         builder.Entity<StudentCourse>().HasOne(x => x.Course)
