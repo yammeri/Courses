@@ -14,8 +14,8 @@ public static partial class ServicesExtensions
     /// <param name="configuration"></param>
     public static void AddDbContextConfiguration(this IServiceCollection services, IConfiguration configuration)
     {
-        string connectionString = configuration.GetConnectionString("CoursesContext");
-        services.AddDbContext<CoursesContext>(options =>
+        string connectionString = configuration.GetConnectionString("Context");
+        services.AddDbContext<Context>(options =>
         {
             options
                 .UseLazyLoadingProxies()

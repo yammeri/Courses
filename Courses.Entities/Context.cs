@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Courses.Entities.Models;
 
 namespace Courses.Entities;
-public class CoursesContext : DbContext
+public class Context : DbContext
 {
     public DbSet<User> Users { get; set; }
     public DbSet<Student> Students { get; set; }
@@ -13,7 +13,7 @@ public class CoursesContext : DbContext
     public DbSet<StudyingLecture> StudyingLectures { get; set; }
     public DbSet<StudentCourse> StudentCourses { get; set; }
 
-    public CoursesContext(DbContextOptions<CoursesContext> options) : base(options) { }
+    public Context(DbContextOptions<Context> options) : base(options) { }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
